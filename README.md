@@ -8,9 +8,9 @@ under `data` includes data for American presidential elections from
 ##  How to use
 
 The recommended (easiest) way to build this is via [Haskell
-Stack](https://docs.haskellstack.org/en/stable/README/).  If you're
-familiar with Cabal, you can use it instead, but will have to install
-[hpre](https://github.com/galenhuntington/hpre) manually.
+Stack](https://docs.haskellstack.org/en/stable/install_and_upgrade/).
+If you're familiar with Cabal, you can use it instead, but will have
+to install [hpre](https://github.com/galenhuntington/hpre) manually.
 
 The binary can be compiled initially using `stack build` (if this
 step is skipped, it will be compiled the first time you run it).

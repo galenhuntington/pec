@@ -1,0 +1,19 @@
+name: pec
+author: Galen Huntington
+category: Voting
+
+defaults: galenhuntington/hpack-defaults@f14c1cdf9475cb4f76db482074cea745a9f5f695
+
+source-dirs:
+- .
+
+executables:
+   pec:
+      main: apportion.hs
+
+dependencies:
+- base
+- base-prelude
+- containers
+- vector
+

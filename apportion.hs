@@ -32,9 +32,9 @@ main = do
       let (_, PECInput _ v1) : _ = list
       forM_ ([0 .. length v1 - 1]) $ printf " %4c" . chfor
       printf "   %11s   %14c\n" ("v/e" :: String) 'Δ'
-	forM_ list \ (st, inp@(PECInput ev vs)) -> do
+	forM_ list \ (st, PECInput ev vs) -> do
       let apports = apportion (ev - atLarges) vs
-      let evs = addAtLarge atLarges inp apports
+      let evs = addAtLarge atLarges vs apports
       modifyIORef' tot (addVec evs)
       printf "%s %4d   " st ev
       printrow evs

@@ -30,10 +30,9 @@ apportion :: Count -> CountVec -> CountVec
             in loop f_es (sv * upf)
          GT -> lt
 
-addAtLarge :: Count -> PECInput -> CountVec -> CountVec
-''  atl inp els =
-   let vv = _votes inp 
-       maxes = findIndices (\x -> x == VG.maximum vv) $ toList vv
+addAtLarge :: Count -> CountVec -> CountVec -> CountVec
+''  atl vs els =
+   let maxes = findIndices (\x -> x == VG.maximum vs) $ toList vs
        es = atl `div` genericLength maxes
    in VG.unsafeAccum (+) els $ map (\i -> (i, es)) maxes
 

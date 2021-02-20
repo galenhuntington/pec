@@ -28,7 +28,7 @@ main = do
    let chfor w = toEnum $ fromEnum 'A' + w :: Char
    let printrow = mapM_ (printf " %4d")
    do
-      printf "   %4c   " 't'
+      printf "   %5c   " 't'
       let (_, PECInput _ v1) : _ = list
       forM_ ([0 .. length v1 - 1]) $ printf " %4c" . chfor
       printf "   %11s   %14c\n" ("v/e" :: String) 'Δ'
@@ -36,7 +36,7 @@ main = do
       let apports = apportion (ev - atLarges) vs
       let evs = addAtLarge atLarges vs apports
       modifyIORef' tot (addVec evs)
-      printf "%s %4d   " st ev
+      printf "%s %5d   " st ev
       printrow evs
       let tie = sum evs /= ev
       let vpe = let (a, b) = vpeRange vs apports; a' = floor a
@@ -53,5 +53,5 @@ main = do
                _     -> pure ()
       putStrLn ""
    tot <- readIORef tot
-	printf "t: %4d   " (sum tot) *> printrow tot *> putStrLn ""
+	printf "t: %5d   " (sum tot) *> printrow tot *> putStrLn ""
 
